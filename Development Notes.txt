@@ -1,0 +1,81 @@
+Basic Functions:
+0. Load Data
+implement with warning message and confirmation
+1. Next
+don't allow to skip unlabelled data
+or warning instead
+2. Previous
+don't allow non-positive cursor position
+3. Reset Work
+implement with warning message and confirmation
+4. Load Work
+implement with warning message and confirmation
+5. Save Work
+implement with warning message for replacement
+6. author
+First Name, Last Name
+
+Label Functions:
+add shortcuts/hotkey
+Buttons to assign a class: 0 ~ 4
+show recent works (recent labels assigned)
+
+More Functions:
+0. Browse some data for overall impression
+1. Jump to
+2. Export txt (won't implement)
+3. Resizable GUI Window
+4. Hot Key
+5. Close Fig warning
+
+Plot:
+-20mins ~ 60mins
+Guidelines:
+Baseline: vertical red lines
+Reference 50%, 95%: horizontal black lines
+grid
+
+
+
+Data fields:
+PPGa
+SF
+baseline
+preview_sample
+
+Work fields:
+labels
+preview_flag (currently previewing or not)
+history
+cursor (cursor position)
+cur_cycle
+remaining (remaining subjects in current cycle)
+author
+
+Other fields:
+questdlg_opts (Opening)
+warndlg_opts (Opening)
+row (Load Data)
+save_flag (Load Data)
+num_cycles (Load Data)
+Text (Load Data, Load/Reset Work)
+codepath (Opening)
+datafile (Load Data)
+datapath (Load Data)
+workfile (Load Work)
+workpath (Load Work)
+alt_flag (Opening)
+
+
+Fields/Funcs to be updated per step:
+1. Buttons
+2. Plot
+3. all work fields
+4. save_flag
+5. Text
+
+Fields/Funcs to be updated in load, reset, save:
+1. author
+2. Buttons
+3. Text
+4. save_flag
