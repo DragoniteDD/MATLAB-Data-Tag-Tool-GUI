@@ -27,7 +27,7 @@ if handles.cursor > 0
     xlabel('Time (minute)', 'Fontsize', 14)
     ylabel('PPGa / Oxipamp', 'Fontsize', 14)
     % title(['Subject ', num2str(Snum), ', Cycle: ', num2str(handles.cur_cycle)], 'Fontsize', 16)
-    title(['Subject ', num2str(Snum)], 'Fontsize', 16)
+    title(['Signal ', num2str(Snum)], 'Fontsize', 16)
 end
 end
 

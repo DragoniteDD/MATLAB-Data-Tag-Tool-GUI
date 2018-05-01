@@ -5,7 +5,7 @@ if isempty(handles.remaining) && handles.cur_cycle == handles.num_cycles && hand
     % update buttons
     handles = UpdateRLbut(handles);
 elseif handles.cursor == length(handles.history) && handles.labels(handles.history(end), handles.cur_cycle+1) == -1
-    warndlg('\fontsize{14}Please label a risk level for your latest subject before moving forward.', 'Risk Level Needed for Current Subject', handles.warndlg_opts);
+    warndlg('\fontsize{14}Please label a risk level for your latest signal before moving forward.', 'Risk Level Needed for Current Subject', handles.warndlg_opts);
 else
     % update cursor
     handles.cursor = handles.cursor + 1;

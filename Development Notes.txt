@@ -52,7 +52,7 @@ cur_cycle
 remaining (remaining subjects in current cycle)
 author
 
-Other fields:
+Other fields: (initialize at)
 questdlg_opts (Opening)
 warndlg_opts (Opening)
 row (Load Data)
