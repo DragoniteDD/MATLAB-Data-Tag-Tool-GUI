@@ -3,9 +3,9 @@ This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Purpose of the GUI Tool
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  
 The data-tagging Tool can be modified for other tagging tasks.  
-For users who do not have access to data, you can play with 'fake_data_for_testing.mat' to learn how this GUI tool works. 
+For users who do not have access to data, you can play with 'fake_data_for_testing.mat' to learn how this GUI tool works.
 ## Introduction of the GUI objects/elements
-![alt text](files for readme/GUI objects no Mosaic.png 'GUI of the data-tagging tool')
+![alt text](files_for_readme/GUI_objects_no_Mosaic.png 'GUI of the data-tagging tool')
 #### 1. Signal plot
 Horizontal axis is __identical__ for all signals, range from -20 min to 60 min, with baseline start from 0 min. Two red reference lines are the start and the end of the true baseline.  
 Vertical axis is **_non-identical_** for all signals. Two black reference lines are 95% maximum value (which is always 1) and 50% maximum value (i.e. median) respectively.  
@@ -49,7 +49,7 @@ The tags you assigned during this work period.
 
 ## Known Mac version MATLAB bug while using hotkeys
 In Mac, by default (at least for macOS 10.13), if you press and hold some key with character accents popup (e.g. 'a', 'e', 's', etc.), a row of character accents will be triggered (as shown in the image below)  
-![alt text](files for readme/character accents popup.png 'character accents popup')  
+![alt text](files_for_readme/character_accents_popup.png 'character accents popup')  
 If you trigger the character accents popup in the GUI tool, the tool will not be able to capture any subsequent key presses of non-functional keys (e.g. '1', 'a')  
 I have checked this problem with MATLAB support, and unfortunately currently there is no workaround within MATLAB. The development team of MATLAB is currently investigating a solution so that this bug can be fixed in some future release of MATLAB.
 #### Temporary solution
