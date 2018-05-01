@@ -7,7 +7,7 @@ For users who do not have access to data, you can play with 'fake_data_for_testi
 ## Introduction of the GUI objects/elements
 ![alt text](files_for_readme/GUI_objects_no_Mosaic.png 'GUI of the data-tagging tool')
 #### 1. Signal plot
-Horizontal axis is __identical__ for all signals, range from -20 min to 60 min, with baseline start from 0 min. Two red reference lines are the start and the end of the true baseline.  
+Horizontal axis is __identical__ for all signals, ranging from -20 min to 60 min, with baseline start at 0 min. Two red reference lines are the start and the end of the true baseline.  
 Vertical axis is **_non-identical_** for all signals. Two black reference lines are 95% maximum value (which is always 1) and 50% maximum value (i.e. median) respectively.  
 Signal index number is shown in the title of the plot.  
 Preview signals have a non-positive index number while signals to tag have a positive index number.
@@ -16,12 +16,12 @@ Load the signals to be tagged.
 #### 3. Load work
 Load your unfinished work to continue working on the tags.
 #### 4. Reset work
-Reset all the tags you have marked so far.
+Reset all the tags you have marked.
 #### 5. Previous
-Show previous signal.  
+Show the previous signal.  
 Hotkey for this push button: alt + leftarrow
 #### 6. Next
-Show next signal.  
+Show the next signal.  
 Hotkey for this push button: alt + rightarrow
 #### 7. Jump to
 Jump to a certain signal according to the index number.
@@ -29,12 +29,13 @@ Jump to a certain signal according to the index number.
 Name of the researcher/clinician who tags the signal.
 #### 9. Save work
 Save your work.  
-This push button was placed far away from load and reset buttons to prevent misclicks.
+This push button was placed far away from the load and the reset buttons to prevent misclicks.
 #### 10. Risk level tagging buttons
 Tag the current signal with a certain risk level.  
 Hotkey1: alt + {RL}  
 Hotkey2: alt + numpad{RL}   
 substitute {RL} with the actual risk level of the signal that you want to tag. e.g. alt + 2, alt + numpad2  
+The number keys represented by {RL} are located to the top of 'qwerty' region of the keyboard. If you have a full size (104-key-keyboard) keyboard, you will have a numpad to the right of the arrow keys, numpad{RL} refers to the number keys in the numpad.  
 In addition, there is one more hotkey for tagging risk level 0: alt + backquote  
 'backquote' is the key locating to the left of '1'. It looks like \` or ~ on your keyboard.
 #### 11. Tagging history
@@ -51,15 +52,15 @@ The tags you assigned during this work period.
 In Mac, by default (at least for macOS 10.13), if you press and hold some key with character accents popup (e.g. 'a', 'e', 's', etc.), a row of character accents will be triggered (as shown in the image below)  
 ![alt text](files_for_readme/character_accents_popup.png 'character accents popup')  
 If you trigger the character accents popup in the GUI tool, the tool will not be able to capture any subsequent key presses of non-functional keys (e.g. '1', 'a')  
-I have checked this problem with MATLAB support, and unfortunately currently there is no workaround within MATLAB. The development team of MATLAB is currently investigating a solution so that this bug can be fixed in some future release of MATLAB.
+I have checked this problem with MATLAB support, and unfortunately there is no workaround within MATLAB at this time. The development team of MATLAB is currently investigating a solution so that this bug can be fixed in some future release of MATLAB.
 #### Temporary solution
 1. Save your work. Close the GUI. Relaunch the GUI. Load data and your saved work. You need to do this every time you encounter the bug.
 2. Disable the character accents popup and enable key repeats by executing the following command in the Mac terminal:
 ```
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
-Once the command being executed, relaunch MATLAB and relaunch the GUI tool to make the changes effective. You will not encounter the same bug again till you change the settings back by executing the following command in the Mac terminal:
+Once the command has being executed, relaunch MATLAB and relaunch the GUI tool to make the changes effective. You will not encounter the same bug again until you change the settings back by executing the following command in the Mac terminal:
 ```
 defaults write -g ApplePressAndHoldEnabled -bool true
 ```
-Relaunch the app to make the changes effective.
+Relaunch MATLAB to make the changes effective.
