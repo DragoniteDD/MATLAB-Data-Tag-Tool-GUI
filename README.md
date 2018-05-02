@@ -1,4 +1,4 @@
-# MATLAB-Data-Tagging-Tool-GUI (Version 0.2 beta)
+# MATLAB-Data-Tagging-Tool-GUI (Version 0.3 beta)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Purpose of the GUI Tool
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  
@@ -8,8 +8,8 @@ For users who do not have access to data, you can play with 'fake_data_for_testi
 ![alt text](files_for_readme/GUI_objects_no_Mosaic.png 'GUI of the data-tagging tool')
 #### 1. Signal plot
 Horizontal axis is __identical__ for all signals, ranging from -20 min to 60 min, with baseline start at 0 min. Two red reference lines are the start and the end of the true baseline.  
-Vertical axis is **_non-identical_** for all signals. Two black reference lines are 95% maximum value (which is always 1) and 50% maximum value (i.e. median) respectively.  
-Signal index number is shown in the title of the plot.  
+Vertical axis is __identical__ for all signals by default, ranging from 0 to 2, but you can set it to be flexible by uncheck the "Fix Y-axis" checkbox. Two black reference lines are 95% maximum value (which is always 1) and 0.5 respectively.  
+Current signal index number and total number of signals is shown in the title of the plot.  
 Preview signals have a non-positive index number while signals to tag have a positive index number.
 #### 2. Load Data
 Load the signals to be tagged.

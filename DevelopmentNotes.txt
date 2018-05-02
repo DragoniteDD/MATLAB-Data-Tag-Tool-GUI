@@ -27,12 +27,13 @@ More Functions:
 3. Resizable GUI Window
 4. Hot Key
 5. Close Fig warning
+6. Option to fix Y-axis
 
 Plot:
 -20mins ~ 60mins
 Guidelines:
 Baseline: vertical red lines
-Reference 50%, 95%: horizontal black lines
+Reference 0.5, 95% of MAX: horizontal black lines
 grid
 
 

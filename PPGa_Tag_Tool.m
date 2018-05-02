@@ -22,7 +22,7 @@ function varargout = PPGa_Tag_Tool(varargin)
 
 % Edit the above textHistory to modify the response to help PPGa_Tag_Tool
 
-% Last Modified by GUIDE v2.5 30-Apr-2018 13:48:39
+% Last Modified by GUIDE v2.5 02-May-2018 15:04:06
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -320,6 +320,16 @@ end
 
 % Update handles structure
 guidata(hObject,handles);
+
+
+% --- Executes on button press in cbFixY.
+function cbFixY_Callback(hObject, eventdata, handles)
+% hObject    handle to cbFixY (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of cbFixY
+UpdatePlot(handles);
 
 
 function editFN_Callback(hObject, eventdata, handles)

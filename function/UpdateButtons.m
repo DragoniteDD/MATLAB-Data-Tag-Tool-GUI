@@ -6,6 +6,7 @@ set(handles.butSaveWork, 'enable', turn)
 set(handles.butPrevious, 'enable', turn)
 set(handles.butNext, 'enable', turn)
 set(handles.butGo, 'enable', turn)
+set(handles.cbFixY, 'enable', turn)
 
 set(handles.textJump, 'enable', turn)
 set(handles.editJump, 'enable', turn)
