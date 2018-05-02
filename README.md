@@ -40,6 +40,7 @@ In addition, there is one more hotkey for tagging risk level 0: alt + backquote
 'backquote' is the key locating to the left of '1'. It looks like \` or ~ on your keyboard.
 #### 11. Tagging history
 The tags you assigned during this work period.
+The purpose of showing this information is for clinicians to confirm that they had assigned the intended risk level for the signal i.e. to prevent misclicks, especially when GUI automatically moves to the next signal after clinicians tag the latest signal. Thus the history is cleared after "Load Work", because all saved work are assumed to have no misclicks, just like the situation that you will not have the "undo" option after opening a saved file.  
 ## General Work Flow
 1. Launch the GUI tool by running PPGa_Tag_Tool.m in MATLAB.  
 2. All signals are shown in random orders, and normalized to 95% maximum value of themselves. After you load the data, you will be first shown some preview signals from a wide range of different risk levels to give you an overall impression of the signals. The preview signals will have non-positive index number (shown in the title of the signal plot) and the risk level tagging tools will be disabled during preview.
