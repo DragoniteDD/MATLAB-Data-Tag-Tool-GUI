@@ -2,7 +2,7 @@ Basic Functions:
 0. Load Data
 implement with warning message and confirmation
 1. Next
-don't allow to skip unlabelled data
+don't allow to skip untagged data
 or warning instead
 2. Previous
 don't allow non-positive cursor position
@@ -15,10 +15,10 @@ implement with warning message for replacement
 6. author
 First Name, Last Name
 
-Label Functions:
+Tag Functions:
 add shortcuts/hotkey
 Buttons to assign a class: 0 ~ 4
-show recent works (recent labels assigned)
+show recent works (recent tags assigned)
 
 More Functions:
 0. Browse some data for overall impression
@@ -45,7 +45,7 @@ baseline
 preview_sample
 
 Work fields:
-labels
+tags
 preview_flag (currently previewing or not)
 history
 cursor (cursor position)

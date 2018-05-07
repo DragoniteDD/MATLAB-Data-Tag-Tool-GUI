@@ -4,8 +4,8 @@ if isempty(handles.remaining) && handles.cur_cycle == handles.num_cycles && hand
     warndlg('\fontsize{14}Congratulations! All work has been done! Thank you for your help! Please remember to save your work!', 'Thank You!', handles.warndlg_opts);
     % update buttons
     handles = UpdateRLbut(handles);
-elseif handles.cursor == length(handles.history) && handles.labels(handles.history(end), handles.cur_cycle+1) == -1
-    warndlg('\fontsize{14}Please label a risk level for your latest signal before moving forward.', 'Risk Level Needed for Current Subject', handles.warndlg_opts);
+elseif handles.cursor == length(handles.history) && handles.tags(handles.history(end), handles.cur_cycle+1) == -1
+    warndlg('\fontsize{14}Please tag a risk level for your latest signal before moving forward.', 'Risk Level Needed for Current Subject', handles.warndlg_opts);
 else
     % update cursor
     handles.cursor = handles.cursor + 1;

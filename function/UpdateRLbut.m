@@ -24,7 +24,7 @@ else
     set(handles.butRL3, 'enable', 'on')
     set(handles.butRL4, 'enable', 'on')
     
-    switch handles.labels(handles.history(handles.cursor), handles.cur_cycle+1)
+    switch handles.tags(handles.history(handles.cursor), handles.cur_cycle+1)
         case 0
             set(handles.butRL0, 'enable', 'off')
         case 1

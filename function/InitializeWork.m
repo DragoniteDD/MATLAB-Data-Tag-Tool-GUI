@@ -1,7 +1,7 @@
-function handles = InitializeWork(handles, label_times)
+function handles = InitializeWork(handles, num_cycles)
 % initialize the work
-handles.labels = ones(handles.row, label_times+1) * -1;
-handles.labels(:,1) = (1:handles.row)';
+handles.tags = ones(handles.row, num_cycles+1) * -1;
+handles.tags(:,1) = (1:handles.row)';
 handles.preview_flag = 1; % is currently browsing
 n = length(handles.preview_sample);
 handles.history = handles.preview_sample(randsample(n, n));
