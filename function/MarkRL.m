@@ -1,7 +1,7 @@
 function handles = MarkRL(handles, RL)
 % mark risk level for a subject/study
-% update tags and lbHistory
-handles.tags(handles.history(handles.cursor), handles.cur_cycle+1) = RL;
+% update labels and lbHistory
+handles.labels(handles.history(handles.cursor), handles.cur_cycle+1) = RL;
 handles = UpdateLBhistory(handles);
 
 % automatically move to the next subject if the current subject is the

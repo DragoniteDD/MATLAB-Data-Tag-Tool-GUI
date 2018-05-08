@@ -162,14 +162,14 @@ if ~exist('confirm', 'var') || strcmp(confirm, 'Yes')
     if ~isequal(handles.workfile, 0)
         % load existing work
         work = load(fullfile(handles.workpath, handles.workfile));
-        if ~isfield(work, 'tags') || ~isfield(work, 'preview_flag') || ~isfield(work, 'history') || ...
+        if ~isfield(work, 'labels') || ~isfield(work, 'preview_flag') || ~isfield(work, 'history') || ...
                 ~isfield(work, 'cursor') || ~isfield(work, 'cur_cycle') || ~isfield(work, 'remaining') || ...
                 ~isfield(work, 'author')
             warndlg('\fontsize{14}The work file does not contain all required fields. Please select the correct file.', 'File Error', handles.warndlg_opts);
-        elseif size(work.tags,1) ~= handles.row
+        elseif size(work.labels,1) ~= handles.row
             warndlg('\fontsize{14}The work file is for some dataset with different number of signals. Please select the correct file.', 'File Error', handles.warndlg_opts);
         else
-            handles.tags = work.tags;
+            handles.labels = work.labels;
             handles.preview_flag = work.preview_flag;
             handles.history = work.history;
             handles.cursor = work.cursor;
@@ -396,7 +396,7 @@ else
     else
         savepath = handles.codepath;
     end
-    filename = ['Tags by ', handles.author.FN, ' ', handles.author.LN, '.mat'];
+    filename = ['Labels by ', handles.author.FN, ' ', handles.author.LN, '.mat'];
 
     cur_path = pwd;
     cd(savepath)
@@ -405,7 +405,7 @@ else
     
     % user actually defines a file to save
     if ~isequal(filename, 0) && ~isequal(savepath, 0)        
-        save(fullfile(savepath,filename), '-struct', 'handles', 'tags', 'preview_flag', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
+        save(fullfile(savepath,filename), '-struct', 'handles', 'labels', 'preview_flag', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
     end
     handles.save_flag = 1;
 end
