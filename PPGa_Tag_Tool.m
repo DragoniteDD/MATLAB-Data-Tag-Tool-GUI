@@ -97,15 +97,20 @@ end
 
 if ~exist('confirm', 'var') || strcmp(confirm, 'Yes')
     % load data
+    cur_path = pwd;
     if isfield(handles, 'datapath') && ~isequal(handles.datapath, 0)
         cd(handles.datapath)
     end
-    [handles.datafile, handles.datapath] = uigetfile('*.mat', 'Select the data file (.mat format)');
+    [datafile, datapath] = uigetfile('*.mat', 'Select the data file (.mat format)');
+    if ~isequal(datapath, 0)
+        handles.datapath = datapath;
+    end
+    cd(cur_path)
     
     % if the selected file is valid
-    if ~isequal(handles.datafile, 0)
+    if ~isequal(datafile, 0)
         % load raw data
-        data = load(fullfile(handles.datapath, handles.datafile));
+        data = load(fullfile(handles.datapath, datafile));
         if ~isfield(data, 'PPGa') || ~isfield(data, 'SF') || ~isfield(data, 'baseline') || ~isfield(data, 'preview_sample')
             warndlg('\fontsize{14}The data file does not contain all required fields. Please select the correct file.', 'File Error', handles.warndlg_opts);
         else
@@ -154,14 +159,24 @@ if ~handles.save_flag
 end
 
 if ~exist('confirm', 'var') || strcmp(confirm, 'Yes')
+    % default work path
+    if ~isfield(handles, 'workpath') || isequal(handles.workpath, 0)
+        handles.workpath = handles.datapath;
+    end
     
     % load work
-    [handles.workfile, handles.workpath] = uigetfile('*.mat', 'Select the work file (.mat format)');
+    cur_path = pwd;
+    cd(handles.workpath)
+    [workfile, workpath] = uigetfile('*.mat', 'Select the work file (.mat format)');
+    if ~isequal(workpath, 0)
+        handles.workpath = workpath;
+    end
+    cd(cur_path)
     
     % if selected file is valid
-    if ~isequal(handles.workfile, 0)
+    if ~isequal(workfile, 0)
         % load existing work
-        work = load(fullfile(handles.workpath, handles.workfile));
+        work = load(fullfile(handles.workpath, workfile));
         if ~isfield(work, 'labels') || ~isfield(work, 'preview_flag') || ~isfield(work, 'history') || ...
                 ~isfield(work, 'cursor') || ~isfield(work, 'cur_cycle') || ~isfield(work, 'remaining') || ...
                 ~isfield(work, 'author')
@@ -390,22 +405,25 @@ if isempty(handles.author.FN)
 elseif isempty(handles.author.LN)
     warndlg('\fontsize{14}Please enter your last name to save your work. Thank you!', 'Last Name Needed', handles.warndlg_opts)
 else
-    % default save path & filename
-    if isfield(handles, 'workpath') && ~isequal(handles.workpath, 0)
-        savepath = handles.workpath;
-    else
-        savepath = handles.codepath;
+    % default work path & filename
+    if ~isfield(handles, 'workpath') || isequal(handles.workpath, 0)
+        handles.datapath
+        handles.workpath = handles.datapath;
     end
-    filename = ['Labels by ', handles.author.FN, ' ', handles.author.LN, '.mat'];
+    savefile = ['Labels by ', handles.author.FN, ' ', handles.author.LN, '.mat'];
 
+    % save work
     cur_path = pwd;
-    cd(savepath)
-    [filename, savepath] = uiputfile('*.mat', 'Save your work', filename);
+    cd(handles.workpath)
+    [savefile, savepath] = uiputfile('*.mat', 'Save your work', savefile);
+    if ~isequal(savepath, 0)
+        handles.workpath = savepath;
+    end
     cd(cur_path)
     
     % user actually defines a file to save
-    if ~isequal(filename, 0) && ~isequal(savepath, 0)        
-        save(fullfile(savepath,filename), '-struct', 'handles', 'labels', 'preview_flag', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
+    if ~isequal(savefile, 0) && ~isequal(handles.workpath, 0)        
+        save(fullfile(handles.workpath,savefile), '-struct', 'handles', 'labels', 'preview_flag', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
     end
     handles.save_flag = 1;
 end
