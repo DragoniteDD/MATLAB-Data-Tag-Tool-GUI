@@ -46,7 +46,7 @@ preview_sample
 
 Work fields:
 labels
-preview_flag (currently previewing or not)
+preview_length
 history
 cursor (cursor position)
 cur_cycle

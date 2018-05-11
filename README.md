@@ -1,4 +1,4 @@
-# MATLAB-Data-Tagging-Tool-GUI (Version 1.0)
+# MATLAB-Data-Tagging-Tool-GUI (Version 1.1)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Purpose of the GUI Tool
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  

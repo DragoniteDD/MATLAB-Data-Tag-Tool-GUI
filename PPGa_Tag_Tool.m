@@ -177,15 +177,21 @@ if ~exist('confirm', 'var') || strcmp(confirm, 'Yes')
     if ~isequal(workfile, 0)
         % load existing work
         work = load(fullfile(handles.workpath, workfile));
-        if ~isfield(work, 'labels') || ~isfield(work, 'preview_flag') || ~isfield(work, 'history') || ...
+        if ~isfield(work, 'labels') || ~isfield(work, 'preview_length') || ~isfield(work, 'history') || ...
                 ~isfield(work, 'cursor') || ~isfield(work, 'cur_cycle') || ~isfield(work, 'remaining') || ...
                 ~isfield(work, 'author')
-            warndlg('\fontsize{14}The work file does not contain all required fields. Please select the correct file.', 'File Error', handles.warndlg_opts);
+            warndlg('\fontsize{14}The work file does not contain all required fields for the current version of GUI tool. Please select the correct file.', 'File Error', handles.warndlg_opts);
         elseif size(work.labels,1) ~= handles.row
             warndlg('\fontsize{14}The work file is for some dataset with different number of signals. Please select the correct file.', 'File Error', handles.warndlg_opts);
+        elseif work.preview_length ~= length(handles.preview_sample)
+            warndlg('\fontsize{14}The work file is for some dataset with different number of preview signals. Please select the correct file.', 'File Error', handles.warndlg_opts);
         else
             handles.labels = work.labels;
-            handles.preview_flag = work.preview_flag;
+            if work.cursor <= work.preview_length
+                handles.preview_flag = 1;
+            else
+                handles.preview_flag = 0;
+            end
             handles.history = work.history;
             handles.cursor = work.cursor;
             handles.cur_cycle = work.cur_cycle;
@@ -422,8 +428,9 @@ else
     cd(cur_path)
     
     % user actually defines a file to save
+    handles.preview_length = length(handles.preview_sample);
     if ~isequal(savefile, 0) && ~isequal(handles.workpath, 0)        
-        save(fullfile(handles.workpath,savefile), '-struct', 'handles', 'labels', 'preview_flag', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
+        save(fullfile(handles.workpath,savefile), '-struct', 'handles', 'labels', 'preview_length', 'history', 'cursor', 'cur_cycle', 'remaining', 'author')
     end
     handles.save_flag = 1;
 end
