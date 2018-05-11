@@ -1,4 +1,4 @@
-# MATLAB-Data-Tagging-Tool-GUI (Version 0.4 beta)
+# MATLAB-Data-Tagging-Tool-GUI (Version 1.0)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Purpose of the GUI Tool
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  
@@ -47,7 +47,8 @@ Hotkey2: alt + numpad{RL}
 substitute {RL} with the actual risk level of the signal that you want to tag. e.g. alt + 2, alt + numpad2  
 The number keys represented by {RL} are located to the top of 'qwerty' region of the keyboard. If you have a full size (104-key-keyboard) keyboard, you will have a numpad to the right of the arrow keys, numpad{RL} refers to the number keys in the numpad.  
 In addition, there is one more hotkey for tagging risk level 0: alt + backquote  
-'backquote' is the key locating to the left of '1'. Its icon looks like \` or ~ on your keyboard.
+'backquote' is the key locating to the left of '1'. Its icon looks like \` or ~ on your keyboard.  
+![alt text](files_for_readme/risk_level_hotkey.png 'risk level hotkeys')  
 #### 11. Tagging history
 The tags you assigned during this work period.  
 The purpose of showing this information is for clinicians to confirm that they had assigned the intended risk level for the signal, i.e. to prevent misclicks, especially when GUI automatically moves to the next signal after clinicians tag the latest signal. Thus the history is cleared after "Load Work", because all saved work are assumed to have no misclicks, just like the situation that you will not have the "undo" option after opening a saved file.  
