@@ -1,7 +1,15 @@
 # MATLAB-Data-Tag-Tool-GUI (Version 1.2)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
-## Update log
+## Table of Contents
+- [Update Log](#update-log)  
+- [Purpose of the GUI Tool](#purpose-of-the-gui-tool)  
+- [General Work Flow](#general-work-flow)  
+- [Introduction of the GUI Objects/Elements](#introduction-of-the-gui-objectselements)  
+- [Known Mac Version MATLAB Bug While Using Hotkeys](#known-mac-version-matlab-bug-while-using-hotkeys)  
+
+## Update Log
 #### Version 1.2
+- Table of Contents added.
 - Added explanation about terminology 'tag' and 'label'. (Basically the two terms are used interchangeably in this tool.)
 
 #### Version 1.1
@@ -27,7 +35,7 @@ In this tool, 'tag' and 'label' are used interchangeably. They both refer to the
 5. You can save your work at any time and finish them later. To save your work, first and last name are needed.
 6. Once you finished tagging, a "Thank You!" message will pop out as a reminder.
 
-## Introduction of the GUI objects/elements
+## Introduction of the GUI Objects/Elements
 ![alt text](files_for_readme/GUI_objects_no_Mosaic.png 'GUI of the data-tagging tool')
 #### 1. Signal plot
 Horizontal axis is __identical__ for all signals, ranging from -20 min to 60 min, with baseline start at 0 min. Two red reference lines are the start and the end of the true baseline.  
@@ -67,7 +75,7 @@ In addition, there is one more hotkey for tagging risk level 0: alt + backquote
 #### 11. Tagging history
 The labels you assigned during __this work period__.  
 The purpose of showing this information is for clinicians to confirm that they had assigned the intended risk level for the signal, i.e. to prevent misclicks, especially when GUI automatically moves to the next signal after clinicians tag the latest signal. Thus the history is cleared after "Load Work", because all saved work are assumed to have no misclicks, just like the situation that you will not have the "undo" option after opening a saved file.  
-## Known Mac version MATLAB bug while using hotkeys
+## Known Mac Version MATLAB Bug While Using Hotkeys
 In Mac, by default (at least for macOS 10.13), if you press and hold some key with character accents popup (e.g. 'a', 'e', 's', etc.), a row of character accents will be triggered (as shown in the image below)  
 ![alt text](files_for_readme/character_accents_popup.png 'character accents popup')  
 If you trigger the character accents popup in the GUI tool, the tool will not be able to capture any subsequent key presses of non-functional keys (e.g. '1', 'a')  
