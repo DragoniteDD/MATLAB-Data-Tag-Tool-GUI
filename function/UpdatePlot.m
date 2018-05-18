@@ -25,12 +25,12 @@ if handles.cursor > 0
     
     if get(handles.cbFixY, 'Value')
         axis([-20, 60, 0, 2])
-        text(-19.8, 1.05, '95% of MAX', 'color', 'black', 'Fontsize', 12)
+        text(-19.8, 1.05, '95th percentile', 'color', 'black', 'Fontsize', 12)
         text(-19.8, 0.55, '0.5 for reference', 'color', 'black', 'Fontsize', 12)
         text(0.2, 0.05, 'Baseline', 'color', 'red', 'Fontsize', 12)
     else
         axis([-20, 60, 0, 1.1*MAX])
-        text(-19.8, 1+0.025*MAX, '95% of MAX', 'color', 'black', 'Fontsize', 12)
+        text(-19.8, 1+0.025*MAX, '95th percentile', 'color', 'black', 'Fontsize', 12)
         text(-19.8, 0.5+0.025*MAX, '0.5 for reference', 'color', 'black', 'Fontsize', 12)
         text(0.2, 0.025*MAX, 'Baseline', 'color', 'red', 'Fontsize', 12)
     end

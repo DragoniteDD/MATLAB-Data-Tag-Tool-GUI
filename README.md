@@ -1,17 +1,22 @@
-# MATLAB-Data-Tagging-Tool-GUI (Version 1.0)
+# MATLAB-Data-Tag-Tool-GUI (Version 1.1)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Update log
+#### Version 1.1
+- Correct the name of the reference line at 1.0 from 95% maximum to 95th percentile.  
+- Add background color to risk level buttons to make them more intuitive visually, with red indicating risky and green indicating safe.  
+
 #### Version 1.0
-Fixed a bug when loading work with different length of preview_sample.  
-Automatic default work path optimized.  
-Fields in the saved work file has been updated, and the saved work file from beta version is not compatible with the current tool. Please use the newest version to tag the actual data (to be sent out soon).
+- Fixed a bug when loading work with different length of preview_sample.  
+- Automatic default work path optimized.  
+- Fields in the saved work file has been updated, and the saved work file from beta version is not compatible with the current tool. Please use the newest version to tag the actual data (to be sent out soon).
+
 ## Purpose of the GUI Tool
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  
 The data-tagging Tool can be modified for other tagging tasks.  
 For users who do not have access to data, you can play with *fake_data_for_testing.mat* to learn how this GUI tool works.
 ## General Work Flow
 1. Launch the GUI tool by running *PPGa_Tag_Tool.m* in MATLAB.  
-2. All signals are shown in random orders, and normalized to 95% maximum value of themselves. After you load the data, you will be first shown some preview signals from a wide range of different risk levels to give you an overall impression of the signals. The preview signals will have non-positive index number (shown in the title of the signal plot) and the risk level tagging tools will be disabled during preview.
+2. All signals are shown in random orders, and normalized to 95th percentile value of themselves. After you load the data, you will be first shown some preview signals from a wide range of different risk levels to give you an overall impression of the signals. The preview signals will have non-positive index number (shown in the title of the signal plot) and the risk level tagging tools will be disabled during preview.
 3. As you move forward to the signals to be tagged (signals with a positive index number), the risk level tagging tools will be enabled, and you can begin tagging the signals with either mouse clicks or hotkeys.
 4. Each signal will be repeated twice (for a total time of 3, for each signal) for consistency check.
 5. You can save your work at any time and finish them later. To save your work, first and last name are needed.
@@ -21,7 +26,7 @@ For users who do not have access to data, you can play with *fake_data_for_testi
 ![alt text](files_for_readme/GUI_objects_no_Mosaic.png 'GUI of the data-tagging tool')
 #### 1. Signal plot
 Horizontal axis is __identical__ for all signals, ranging from -20 min to 60 min, with baseline start at 0 min. Two red reference lines are the start and the end of the true baseline.  
-Vertical axis is __identical__ for all signals by default, ranging from 0 to 2, but you can set it to be flexible by uncheck the "Fix Y-axis" checkbox. Two black reference lines are 95% maximum value (which is always 1) and 0.5 respectively.  
+Vertical axis is __identical__ for all signals by default, ranging from 0 to 2, but you can set it to be flexible by uncheck the "Fix Y-axis" checkbox. Two black reference lines are 95th percentile (which is always 1) and 0.5 respectively.  
 Current signal index number and total number of signals is shown in the title of the plot.  
 Preview signals have a non-positive index number while signals to tag have a positive index number.
 #### 2. Load Data
