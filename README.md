@@ -1,6 +1,9 @@
-# MATLAB-Data-Tag-Tool-GUI (Version 1.1)
+# MATLAB-Data-Tag-Tool-GUI (Version 1.2)
 This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 ## Update log
+#### Version 1.2
+- Added explanation about terminology 'tag' and 'label'. (Basically the two terms are used interchangeably in this tool.)
+
 #### Version 1.1
 - Correct the name of the reference line at 1.0 from 95% maximum to 95th percentile.  
 - Add background color to risk level buttons to make them more intuitive visually, with red indicating risky and green indicating safe.  
@@ -14,6 +17,8 @@ This tool was developed in MATLAB 9.4.0.813654 (R2018a)
 This MATLAB GUI was developed for tagging photoplethysmogram amplitude signals with risk levels, as a preparation for future analysis of the data with machine learning & deep learning techniques.  
 The data-tagging Tool can be modified for other tagging tasks.  
 For users who do not have access to data, you can play with *fake_data_for_testing.mat* to learn how this GUI tool works.
+##### terminology
+In this tool, 'tag' and 'label' are used interchangeably. They both refer to the risk level that user assigns to the signal. 'tag' is more frequently used as a verb while 'label' is more frequently used as a noun everywhere in this tool including README file.  
 ## General Work Flow
 1. Launch the GUI tool by running *PPGa_Tag_Tool.m* in MATLAB.  
 2. All signals are shown in random orders, and normalized to 95th percentile value of themselves. After you load the data, you will be first shown some preview signals from a wide range of different risk levels to give you an overall impression of the signals. The preview signals will have non-positive index number (shown in the title of the signal plot) and the risk level tagging tools will be disabled during preview.
@@ -32,9 +37,9 @@ Preview signals have a non-positive index number while signals to tag have a pos
 #### 2. Load Data
 Load the signals to be tagged.
 #### 3. Load work
-Load your unfinished work to continue working on the tags.
+Load your unfinished work to continue working on the labels.
 #### 4. Reset work
-Reset all the tags you have marked.
+Reset all the labels you have tagged.
 #### 5. Previous
 Show the previous signal.  
 Hotkey for this push button: alt + leftarrow
@@ -60,7 +65,7 @@ In addition, there is one more hotkey for tagging risk level 0: alt + backquote
 'backquote' is the key locating to the left of '1'. Its icon looks like \` or ~ on your keyboard.  
 ![alt text](files_for_readme/risk_level_hotkey.png 'risk level hotkeys')  
 #### 11. Tagging history
-The tags you assigned during this work period.  
+The labels you assigned during __this work period__.  
 The purpose of showing this information is for clinicians to confirm that they had assigned the intended risk level for the signal, i.e. to prevent misclicks, especially when GUI automatically moves to the next signal after clinicians tag the latest signal. Thus the history is cleared after "Load Work", because all saved work are assumed to have no misclicks, just like the situation that you will not have the "undo" option after opening a saved file.  
 ## Known Mac version MATLAB bug while using hotkeys
 In Mac, by default (at least for macOS 10.13), if you press and hold some key with character accents popup (e.g. 'a', 'e', 's', etc.), a row of character accents will be triggered (as shown in the image below)  
